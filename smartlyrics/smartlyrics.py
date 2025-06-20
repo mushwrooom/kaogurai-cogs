@@ -227,7 +227,7 @@ class SmartLyrics(commands.Cog):
                         await ctx.send("Please provide a query to search.")
                         return
 
-                    results = await self._get_lyrics(f"{trackname} {artistname}")
+                    results = await self._get_lyrics(f"{trackname} {artistname} English")
                     if results:
                         await self._send_results(ctx, results, "Last.fm")
                         return
