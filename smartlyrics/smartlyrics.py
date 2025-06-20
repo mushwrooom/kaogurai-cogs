@@ -197,7 +197,7 @@ class SmartLyrics(commands.Cog):
                     else:
                         title = None
                 if title:
-                    results = await self._get_lyrics(title)
+                    results = await self._get_lyrics(title + " English")
                     if results:
                         await self._send_results(ctx, results, "Voice Channel")
                         return
@@ -227,7 +227,7 @@ class SmartLyrics(commands.Cog):
                         await ctx.send("Please provide a query to search.")
                         return
 
-                    results = await self._get_lyrics(f"{trackname} {artistname} English")
+                    results = await self._get_lyrics(f"{trackname} {artistname}")
                     if results:
                         await self._send_results(ctx, results, "Last.fm")
                         return
